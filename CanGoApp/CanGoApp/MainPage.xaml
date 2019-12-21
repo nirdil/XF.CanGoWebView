@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:self="clr-namespace:CanGoApp"
+             xmlns:controls="clr-namespace:CanGoApp.Controls"
+             mc:Ignorable="d"
+             x:Class="CanGoApp.MainPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <self:BGColorConverter x:Key="bgColorConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <StackLayout>
+        <Frame BorderColor="Black">
+            <FlexLayout Direction="Row" JustifyContent="SpaceEvenly" AlignContent="SpaceEvenly">
+                <!--<Button BackgroundColor="{Binding CanGoBack, Source={Reference webView}, Converter={StaticResource bgColorConverter}}" TextColor="White" FontSize="Small" Text="Back" Clicked="GoBackClicked"></Button>
+                <Button BackgroundColor="{Binding CanGoForward, Source={Reference webView}, Converter={StaticResource bgColorConverter}}" TextColor="White" FontSize="Small" Text="Forward" Clicked="GoForwardClicked"></Button>-->
+                <Button BackgroundColor="{Binding CustomCanGoBack, Source={Reference webView}, Converter={StaticResource bgColorConverter}}" TextColor="White" FontSize="Small" Text="Back" Clicked="GoBackClicked"></Button>
+                <Button BackgroundColor="{Binding CustomCanGoForward, Source={Reference webView}, Converter={StaticResource bgColorConverter}}" TextColor="White" FontSize="Small" Text="Forward" Clicked="GoForwardClicked"></Button>
+                <Button BackgroundColor="Green"  TextColor="White" FontSize="Small" Text="Google" Clicked="GoToGoogleClicked"></Button>
+                <Button BackgroundColor="Green" TextColor="White" FontSize="Small" Text="Angular" Clicked="GoToAngularClicked"></Button>
+            </FlexLayout>
+        </Frame>
+        <controls:CustomWebView x:Name="webView" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"></controls:CustomWebView>
+    </StackLayout>
+</ContentPage>
